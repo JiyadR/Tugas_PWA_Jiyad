@@ -1,11 +1,11 @@
 const CACHE_NAME = "webjivad-cache-v2";
 const urlsToCache = [
-  "./",
-  "./Tugas_PWA_Jiyad/index.html",
-  "./Tugas_PWA_Jiyad/about.html",
-  "./Tugas_PWA_Jiyad/contact.html",
-  "./Tugas_PWA_Jiyad/offline.html",
-  "./Tugas_PWA_Jiyad/manifest.json",
+  "/",
+  "/Tugas_PWA_Jiyad/index.html",
+  "/Tugas_PWA_Jiyad/about.html",
+  "/Tugas_PWA_Jiyad/contact.html",
+  "/Tugas_PWA_Jiyad/offline.html",
+  "/Tugas_PWA_Jiyad/manifest.json",
 ];
 
 // Install Service Worker
@@ -49,7 +49,7 @@ self.addEventListener("fetch", (event) => {
             event.request.mode === "navigate" ||
             event.request.destination === "document"
           ) {
-            return caches.match("./Tugas_PWA_Jiyad/offline.html");
+            return caches.match("/Tugas_PWA_Jiyad/offline.html");
           }
         });
       })
