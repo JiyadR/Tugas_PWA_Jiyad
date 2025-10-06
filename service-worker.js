@@ -1,12 +1,13 @@
 const CACHE_NAME = "webjivad-cache-v2";
 const urlsToCache = [
-  "./index.html",
-  "./about.html",
-  "./contact.html",
-  "./offline.html",
-  "./manifest.json",
-  "./bacground/me.png",
-  "./bacground/bg unand 2.png"
+  "."
+  "index.html",
+  "about.html",
+  "contact.html",
+  "offline.html",
+  "manifest.json",
+  "bacground/me.png",
+  "bacground/bg unand 2.png"
 ];
 
 // Install Service Worker
@@ -32,7 +33,7 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-const offlinePage = "./offline.html";
+const offlinePage = "offline.html";
 
 // Fetch handler
 self.addEventListener("fetch", (event) => {
