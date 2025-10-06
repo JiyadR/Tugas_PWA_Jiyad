@@ -181,7 +181,7 @@
 <body>
   <!-- NAVBAR -->
   <nav>
-    <a href="index.html">HOME</a>
+    <a href="#" onclick="goHome()">HOME</a>
     <a href="about.html">ABOUT</a>
     <a href="contact.html">CONTACT</a>
     <button class="add-button">Install App</button>
@@ -250,6 +250,12 @@
   </footer>
 
   <script>
+    // Fungsi kembali ke home
+    function goHome() {
+      window.location.href = "index.html"; // redirect ke halaman utama
+      window.close(); // coba tutup tab (hanya jalan jika dibuka via window.open)
+    }
+
     // Form submit sederhana
     function handleSubmit(event) {
       event.preventDefault();
@@ -292,4 +298,3 @@
   </script>
 </body>
 </html>
-
