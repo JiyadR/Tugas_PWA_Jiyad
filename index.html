@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas Pertama Desain Web - PWA</title>
+  <!-- Tambahan manifest -->
+  <link rel="manifest" href="manifest.json" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("bacground/bg unand 2.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* === NAVBAR === */
+    nav {
+      background: #2f3e2f;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      align-items: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    .add-button {
+      background: #ffcc00;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      display: none; /* default disembunyikan */
+    }
+
+    /* === GLASS EFFECT CONTAINER === */
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    /* garis bawah untuk judul */
+    .title-text {
+      display: inline-block;
+      border-bottom: 3px solid #2f3e2f; /* warna sama dengan navbar */
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #2f3e2f;
+      color: #fff;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html" target="_blank">ABOUT</a>
+    <a href="contact.html" target="_blank">CONTACT</a>
+    <button class="add-button">Install App</button>
+  </nav>
+
+  <!-- Konten -->
+  <div class="container">
+    <h1>
+      <span class="title-text">Halo semuanya!!</span>
+    </h1>
+    <p>
+      Website ini dibuat untuk penyelesaian tugas pertama pada mata kuliah Desain Web.
+      Mata kuliah ini memberikan kesempatan kepada mahasiswa untuk memahami dasar-dasar pembuatan halaman web,
+      mulai dari struktur menggunakan HTML sampai pengaturan tampilan dengan CSS.
+    </p>
+    <p>
+      Pada website ini akan ada link navbar <b>About</b> yang berisi informasi tentang diri saya sendiri
+      dan link navbar <b>Contact</b> yang berisi informasi kontak seperti alamat, email, telepon, dan sosial media.
+    </p>
+    <h2>💡 Apa itu PWA?</h2>
+    <p>
+      PWA (Progressive Web App) adalah aplikasi web yang bisa diinstal seperti aplikasi biasa,
+      dapat berjalan offline, dan lebih cepat serta responsif.
+    </p>
+  </div>
+
+  <footer>
+    &copy; <script>document.write(new Date().getFullYear());</script> — Tugas Web PWA
+  </footer>
+
+  <script>
+    let deferredPrompt;
+
+    // Event untuk menangkap beforeinstallprompt
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.querySelector(".add-button").style.display = "inline-block";
+    });
+
+    document.querySelector(".add-button").addEventListener("click", () => {
+      document.querySelector(".add-button").style.display = "none";
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((result) => {
+          console.log("User choice:", result.outcome);
+          deferredPrompt = null;
+        });
+      }
+    });
+
+    // Daftarkan Service Worker
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("./service-worker.js")
+          .then((registration) => {
+            console.log("Service Worker registered:", registration.scope);
+          })
+          .catch((error) => {
+            console.log("Service Worker registration failed:", error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
