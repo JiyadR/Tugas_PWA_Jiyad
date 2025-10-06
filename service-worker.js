@@ -32,7 +32,7 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-const offlinePage = "/Tugas_PWA_Jiyad/offline.html";
+const offlinePage = "./offline.html";
 
 // Fetch handler
 self.addEventListener("fetch", (event) => {
