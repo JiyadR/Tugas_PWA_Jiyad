@@ -1,21 +1,28 @@
 const CACHE_NAME = "webjivad-cache-v2";
 const urlsToCache = [
-  "."
+  ".",
   "index.html",
   "about.html",
   "contact.html",
   "offline.html",
   "manifest.json",
-  "bacground/me.png",
-  "bacground/bg unand 2.png"
+  "background/me.png",
+  "background/bg unand 2.png"
 ];
 
 // Install Service Worker
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
+    caches.open(CACHE_NAME).then(async (cache) => {
       console.log("Caching files...");
-      return cache.addAll(urlsToCache);
+      for (const url of urlsToCache) {
+        try {
+          await cache.add(url);
+          console.log("Cached:", url);
+        } catch (err) {
+          console.warn("Failed to cache:", url, err);
+        }
+      }
     })
   );
 });
