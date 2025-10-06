@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -177,19 +178,11 @@
       }
     }
   </style>
-  <script>
-    // Fungsi untuk kembali ke Home dan menutup tab sekarang
-    function goHome() {
-      window.location.href = "index.html"; 
-      window.open("index.html", "_self"); 
-      window.close(); 
-    }
-  </script>
 </head>
 <body>
   <!-- NAVBAR -->
   <nav>
-    <a href="#" onclick="goHome()">HOME</a>
+    <a href="#" onclick="closeTab()">HOME</a>
     <a href="about.html">ABOUT</a>
     <a href="contact.html">CONTACT</a>
     <button class="add-button">Install App</button>
@@ -258,4 +251,52 @@
   </footer>
 
   <script>
+    // Fungsi untuk menutup tab
+    function closeTab() {
+      window.open('', '_self');
+      window.close();
+    }
+
     // Form submit sederhana
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert("Form berhasil dikirim!");
+      event.target.reset();
+    }
+
+    // PWA Install prompt
+    let deferredPrompt;
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.querySelector(".add-button").style.display = "inline-block";
+    });
+
+    document.querySelector(".add-button").addEventListener("click", () => {
+      document.querySelector(".add-button").style.display = "none";
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((result) => {
+          console.log("User choice:", result.outcome);
+          deferredPrompt = null;
+        });
+      }
+    });
+
+    // Register Service Worker
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("./service-worker.js")
+          .then((registration) => {
+            console.log("Service Worker registered:", registration.scope);
+          })
+          .catch((error) => {
+            console.log("Service Worker registration failed:", error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
+```
