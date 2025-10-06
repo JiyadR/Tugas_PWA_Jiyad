@@ -6,8 +6,8 @@ const urlsToCache = [
   "contact.html",
   "offline.html",
   "manifest.json",
-  "background/me.png",
-  "background/bg unand 2.png"
+  "background/me.jpg",
+  "background/bg unand 2.jpg"
 ];
 
 // Install Service Worker
