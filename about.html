@@ -13,161 +13,165 @@
       background: url("bacground/bg unand 2.jpg") no-repeat center center fixed;
       background-size: cover;
     }
+/* NAVBAR */
+nav {
+  background: #2f3e2f;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  align-items: center;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+nav a:hover {
+  color: #ffcc00;
+}
+.add-button {
+  background: #ffcc00;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+}
 
-    /* NAVBAR */
-    nav {
-      background: #2f3e2f;
-      padding: 12px 20px;
-      display: flex;
-      justify-content: flex-end;
-      gap: 20px;
-      align-items: center;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
-      transition: color 0.2s;
-      cursor: pointer;
-    }
-    nav a:hover {
-      color: #ffcc00;
-    }
-    .add-button {
-      background: #ffcc00;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      display: none;
-    }
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
 
-    /* Container */
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: 40px auto;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 15px;
-      padding: 30px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #222;
+  border-bottom: 3px solid #2f3e2f;
+  display: inline-block;
+  padding-bottom: 5px;
+}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #222;
-      border-bottom: 3px solid #2f3e2f;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
+/* Layout foto + teks */
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
 
-    /* Layout foto + teks */
-    .about-content {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2f3e2f;
+  flex-shrink: 0;
+}
 
-    .profile-pic {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #2f3e2f;
-      flex-shrink: 0;
-    }
+.about-text {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
 
-    .about-text {
-      flex: 1;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #333;
-    }
+.skills, .hobbies {
+  margin-top: 30px;
+}
+.skills h2, .hobbies h2 {
+  color: #222;
+  margin-bottom: 10px;
+}
+.skills ul, .hobbies ul {
+  list-style: none;
+  padding: 0;
+}
+.skills li {
+  background: rgba(255,255,255,0.3);
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 6px;
+}
+.hobbies ul {
+  list-style: disc;
+  padding-left: 20px;
+}
 
-    .skills, .hobbies {
-      margin-top: 30px;
-    }
-    .skills h2, .hobbies h2 {
-      color: #222;
-      margin-bottom: 10px;
-    }
-    .skills ul, .hobbies ul {
-      list-style: none;
-      padding: 0;
-    }
-    .skills li {
-      background: rgba(255,255,255,0.3);
-      padding: 8px 12px;
-      margin: 6px 0;
-      border-radius: 6px;
-    }
-    .hobbies ul {
-      list-style: disc;
-      padding-left: 20px;
-    }
+footer {
+  text-align:center; 
+  padding:15px; 
+  color:#fff;
+}
 
-    footer {
-      text-align:center; 
-      padding:15px; 
-      color:#fff;
-    }
   </style>
 </head>
 <body>
   <!-- NAVBAR -->
   <nav>
-    <a href="index.html">HOME</a>
+    <a href="#" onclick="closeTab()">HOME</a>
     <a href="about.html">ABOUT</a>
     <a href="contact.html">CONTACT</a>
     <button class="add-button">Install App</button>
   </nav>
 
   <!-- Konten -->
+
   <div class="container">
     <h1>Tentang Saya</h1>
 
-    <div class="about-content">
-      <img src="bacground/me.jpg" alt="Foto Profil" class="profile-pic">
+```
+<div class="about-content">
+  <img src="bacground/me.jpg" alt="Foto Profil" class="profile-pic">
 
-      <div class="about-text">
-        <p>
-          Halo! Saya <strong>Jivad Rifqi Pasaribu</strong>, mahasiswa Informatika di 
-          Universitas Andalas dengan NIM 2411533003.  
-          Saya memiliki ketertarikan pada <em>Bidang Data Science</em>, <em>Machine Learning</em>, 
-          dan juga <em>Deep Learning</em>. 
-        </p>
-        <p>
-          Saya percaya bahwa teknologi adalah alat yang bisa membantu mempermudah hidup manusia 
-          jika digunakan dengan bijak. Oleh karena itu, saya terus belajar agar bisa 
-          mengembangkan keterampilan di bidang ini.
-        </p>
-      </div>
-    </div>
+  <div class="about-text">
+    <p>
+      Halo! Saya <strong>Jivad Rifqi Pasaribu</strong>, mahasiswa Informatika di 
+      Universitas Andalas dengan NIM 2411533003.  
+      Saya memiliki ketertarikan pada <em>Bidang Data Science</em>, <em>Machine Learning</em>, 
+      dan juga <em>Deep Learning</em>. 
+    </p>
+    <p>
+      Saya percaya bahwa teknologi adalah alat yang bisa membantu mempermudah hidup manusia 
+      jika digunakan dengan bijak. Oleh karena itu, saya terus belajar agar bisa 
+      mengembangkan keterampilan di bidang ini.
+    </p>
+  </div>
+</div>
 
-    <div class="skills">
-      <h2>Kegiatan di dalam kampus</h2>
-      <ul>
-        <li>Mengikuti Himpunan Mahasiswa Informatika</li>
-        <li>Mengikuti kepanitiaan LKMMTD - FTI UNAND 2025</li>
-      </ul>
-    </div>
+<div class="skills">
+  <h2>Kegiatan di dalam kampus</h2>
+  <ul>
+    <li>Mengikuti Himpunan Mahasiswa Informatika</li>
+    <li>Mengikuti kepanitiaan LKMMTD - FTI UNAND 2025</li>
+  </ul>
+</div>
 
-    <div class="hobbies">
-      <h2>Hobi & Minat</h2>
-      <ul>
-        <li>Ngoding & eksplorasi teknologi baru</li>
-        <li>Desain grafis</li>
-        <li>Olahraga (futsal & badminton)</li>
-        <li>Mendengarkan musik</li>
-      </ul>
-    </div>
+<div class="hobbies">
+  <h2>Hobi & Minat</h2>
+  <ul>
+    <li>Ngoding & eksplorasi teknologi baru</li>
+    <li>Desain grafis</li>
+    <li>Olahraga (futsal & badminton)</li>
+    <li>Mendengarkan musik</li>
+  </ul>
+</div>
+```
+
   </div>
 
   <footer>
@@ -175,6 +179,12 @@
   </footer>
 
   <script>
+    // Fungsi untuk menutup tab
+    function closeTab() {
+      window.open('', '_self');
+      window.close();
+    }
+
     // PWA Install prompt
     let deferredPrompt;
     const addBtn = document.querySelector(".add-button");
@@ -206,5 +216,6 @@
       });
     }
   </script>
+
 </body>
 </html>
