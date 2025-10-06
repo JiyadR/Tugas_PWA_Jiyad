@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <!-- manifest untuk PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("bacground/bg unand 2.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* === NAVBAR === */
+    nav {
+      background: #2f3e2f;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      align-items: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    .add-button {
+      background: #ffcc00;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* === GLASS EFFECT CONTAINER === */
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .emoji {
+      font-size: 32px;
+      margin: 0 8px;
+    }
+
+    .title-text {
+      display: inline-block;
+      border-bottom: 3px solid #2f3e2f;
+      padding-bottom: 5px;
+    }
+
+    /* === Layout Contact === */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 24px;
+    }
+    .contact-info p {
+      margin: 10px 0;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .contact-info strong {
+      color: #000;
+      font-size: 18px;
+    }
+
+    .social-links {
+      margin-top: 20px;
+    }
+    .social-links a {
+      display: inline-block;
+      margin-right: 12px;
+    }
+    .social-links img {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+    .social-links img:hover {
+      transform: scale(1.1);
+    }
+
+    /* === GLASS EFFECT FORM === */
+    .contact-form {
+      background: rgba(255, 255, 255, 0.25);
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .contact-form h2 {
+      margin-bottom: 15px;
+    }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 6px;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.6);
+    }
+    .contact-form button {
+      background: #007bff;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+    .contact-form button:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .radio-group {
+      margin: 12px 0;
+      font-size: 14px;
+    }
+    .radio-group label {
+      margin-right: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #2f3e2f;
+      color: #fff;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+    <button class="add-button">Install App</button>
+  </nav>
+
+  <div class="container">
+    <h1>
+      <span class="title-text">
+        <span class="emoji">📞</span>
+        Hubungi saya
+        <span class="emoji">📞</span>
+      </span>
+    </h1>
+
+    <div class="contact-wrapper">
+      <!-- Info Kontak -->
+      <div class="contact-info">
+        <h2>Informasi Kontak</h2>
+        <p><strong>Email:</strong> jiyadrifqipasaribu@gmail.com</p>
+        <p><strong>Telepon:</strong> +62 823 6362 9197</p>
+        <p><strong>Alamat:</strong> Jl. Dr. Moh. Hatta No.45, Binuang Kp. Dalam, Kec. Pauh, Kota Padang, Sumatera Barat 25161</p>
+        
+        <!-- Social Media -->
+        <div class="social-links">
+          <a href="mailto:jiyadrifqipasaribu@gmail.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">
+          </a>
+          <a href="https://wa.me/6282363629197" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+          </a>
+          <a href="https://instagram.com/jypsrb" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/in/jiyad-rifqi-pasaribu-b580a8321" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn">
+          </a>
+        </div>
+      </div>
+
+      <!-- Formulir Kontak -->
+      <div class="contact-form">
+        <h2>Kirim Pesan</h2>
+        <form onsubmit="handleSubmit(event)">
+          <input type="text" name="nama" placeholder="Nama Lengkap" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <select name="kategori" required>
+            <option value="">-- Pilih Kategori Pesan --</option>
+            <option value="pertanyaan">Pertanyaan</option>
+            <option value="saran">Saran</option>
+            <option value="masalah">Masalah</option>
+          </select>
+          <textarea name="pesan" rows="6" placeholder="Tulis pesan Anda..." required></textarea>
+          <div class="radio-group">
+            <span>Ingin menerima balasan?</span><br>
+            <label><input type="radio" name="balasan" value="ya" required> Ya</label>
+            <label><input type="radio" name="balasan" value="tidak"> Tidak</label>
+          </div>
+          <button type="submit">Kirim</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; <script>document.write(new Date().getFullYear());</script> — Contact Page
+  </footer>
+
+  <script>
+    // Form submit sederhana
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert("Form berhasil dikirim!");
+      event.target.reset();
+    }
+
+    // PWA Install prompt
+    let deferredPrompt;
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.querySelector(".add-button").style.display = "inline-block";
+    });
+
+    document.querySelector(".add-button").addEventListener("click", () => {
+      document.querySelector(".add-button").style.display = "none";
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((result) => {
+          console.log("User choice:", result.outcome);
+          deferredPrompt = null;
+        });
+      }
+    });
+
+    // Register Service Worker
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("./service-worker.js")
+          .then((registration) => {
+            console.log("Service Worker registered:", registration.scope);
+          })
+          .catch((error) => {
+            console.log("Service Worker registration failed:", error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
+
