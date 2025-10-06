@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -115,9 +116,20 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
     }
     #installBtn:hover {
       background-color: #3f5240;
+      transform: scale(1.05);
+    }
+
+    /* Info install */
+    #installInfo {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #222;
+      display: none;
+      text-align: center;
     }
   </style>
 </head>
@@ -171,6 +183,7 @@
 
     <!-- Tombol Install App -->
     <button id="installBtn">Install App</button>
+    <div id="installInfo">Aplikasi siap diinstal ke perangkat Anda</div>
   </div>
 
   <footer style="text-align:center; padding:15px; color:#fff;">
@@ -191,11 +204,13 @@
     // Tombol Install App
     let deferredPrompt;
     const installBtn = document.getElementById("installBtn");
+    const installInfo = document.getElementById("installInfo");
 
     window.addEventListener("beforeinstallprompt", (e) => {
       e.preventDefault();
       deferredPrompt = e;
       installBtn.style.display = "inline-block";
+      installInfo.style.display = "block";
     });
 
     installBtn.addEventListener("click", () => {
@@ -204,8 +219,10 @@
         deferredPrompt.userChoice.then((choiceResult) => {
           if (choiceResult.outcome === "accepted") {
             console.log("User accepted install");
+            installInfo.innerText = "✅ Aplikasi berhasil diinstal.";
           } else {
             console.log("User dismissed install");
+            installInfo.innerText = "❌ Instalasi dibatalkan.";
           }
           deferredPrompt = null;
           installBtn.style.display = "none";
@@ -215,3 +232,4 @@
   </script>
 </body>
 </html>
+```
